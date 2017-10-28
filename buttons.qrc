@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/all.jpg</file>
+        <file>res/appico.ico</file>
+        <file>res/one.jpg</file>
+        <file>res/rand.jpg</file>
+    </qresource>
+</RCC>

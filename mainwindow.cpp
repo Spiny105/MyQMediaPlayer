@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     player->setVolume(ui->volume_horizontalSlider->value());
     prevVolume = ui->volume_horizontalSlider->value();
 
-    // при изменении индекса текущего трека в плейлисте, устанавливаем название файла в специальном лейбле
+    //При изменении индекса текущего трека в плейлисте, устанавливаем название файла в специальном лейбле
     connect(playList, SIGNAL(currentIndexChanged(int)), this, SLOT(onPlaylistIndexChanged(int)));
 
     //Изменять индикатор текущего времени воспроизведения
@@ -63,7 +63,7 @@ void MainWindow::playTimeDisplay(qint64 val)
     QTime currentTime = QTime(0 , 0, 0).addMSecs(val);
     ui->current_track_timer->setText(currentTime.toString() + "/" + allTime.toString());
 
-    //Отобразить на ползенке времени
+    //Отобразить на ползунке времени
     ui->play_time_horizontalSlider->setMaximum(player->duration());
     ui->play_time_horizontalSlider->setValue(val);
 
@@ -119,7 +119,7 @@ void MainWindow::on_next_pushButton_clicked()
     playList->next();
 }
 
-///Нажатие на клавишу предидущего трека
+///Нажатие на клавишу предыдущего трека
 void MainWindow::on_prev_pushButton_clicked()
 {
     playList->previous();
@@ -131,7 +131,7 @@ void MainWindow::on_play_pushButton_clicked()
     player->play();
 }
 
-///Наэатие на клавишу "Пауза"
+///Нажатие на клавишу "Пауза"
 void MainWindow::on_pause_pushButton_clicked()
 {
     player->pause();
